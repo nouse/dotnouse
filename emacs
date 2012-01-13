@@ -30,7 +30,8 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-gray30)
+(require 'color-theme-tango-2)
+(color-theme-tango-2)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 
