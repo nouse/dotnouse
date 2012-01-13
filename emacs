@@ -10,13 +10,18 @@
 (require 'ibus)
 (add-hook 'after-init-hook 'ibus-mode-on)
 
+(setq
+  el-get-sources
+  '(mingus
+    evil
+    color-theme
+    flymake-ruby
+    rvm
+   )
+)
 (require 'el-get)
-(setq el-get-sources
-      '(evil
-         mingus
-         color-theme
-       ))
-(el-get)
+(el-get 'sync)
+
 (setq evil-shift-width 2)
 (setq evil-want-C-u-scroll t)
 (require 'evil)  
@@ -29,9 +34,14 @@
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+(setq-default tab-width 2)
+
 ;;disable both beeping and visible-bell
 (setq visible-bell nil)
 (setq ring-bell-function 'ignore)
+(fset 'yes-or-no-p 'y-or-n-p);; use y/n to anwser
 
 (require 'mingus)
 
