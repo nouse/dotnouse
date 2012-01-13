@@ -11,6 +11,7 @@ Bundle 'ujihisa/neco-ghc'
 Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'godlygeek/tabular'
+Bundle 'Lokaltog/vim-powerline'
 
 syntax on
 filetype plugin on
@@ -19,7 +20,8 @@ filetype indent on " Enable filetype-specific indenting and plugins
 runtime! macros/matchit.vim
 
 set bs=2
-set statusline=%F%m%r%h%w\ [POS=%4l%4v][%p%%]\ [LEN=%L]
+set laststatus=2
+set t_Co=256
 
 set expandtab
 set softtabstop=2
