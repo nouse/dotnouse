@@ -24,7 +24,7 @@
 
 (setq evil-shift-width 2)
 (setq evil-want-C-u-scroll t)
-(require 'evil)  
+(require 'evil)
 (evil-mode 1)
 (define-key evil-normal-state-map " " 'evil-ex-read-command)
 
@@ -36,16 +36,20 @@
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+
+;; save my life
 (setq-default tab-width 2)
+(fset 'yes-or-no-p 'y-or-n-p);; use y/n to anwser
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
 ;;disable both beeping and visible-bell
 (setq visible-bell nil)
 (setq ring-bell-function 'ignore)
-(fset 'yes-or-no-p 'y-or-n-p);; use y/n to anwser
 
 (require 'mingus)
 
 (ido-mode 1)
+(setq ido-enable-flex-matching t)
 
 ;; rubymode
 (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
@@ -54,6 +58,18 @@
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
+(defun ruby-insert-end ()
+  (interactive)
+  (insert "end")
+  (ruby-indent-line t)
+  (end-of-line))
+
+;; Local key bindings
+(add-hook 'ruby-mode-hook
+          (lambda ()
+            ;; (ruby-electric-mode)
+            (local-set-key [(control c) (control e)] 'ruby-insert-end)
+))
 
 ;; eshell alias
 (defun eshell/emacs (file)

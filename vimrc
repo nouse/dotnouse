@@ -28,12 +28,11 @@ set softtabstop=2
 set tabstop=2
 set shiftwidth=2
 
-colorscheme default
-"set ai
-"set si
+colorscheme desert
 
 set showcmd
 set hlsearch
+set incsearch
 set ignorecase
 set smartcase
 
