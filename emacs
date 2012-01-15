@@ -17,11 +17,14 @@
     color-theme
     flymake-ruby
     rvm
+    ruby-electric
+    fuzzy-format
    )
 )
 (require 'el-get)
 (el-get 'sync)
 
+(require 'fuzzy-format)
 (setq evil-shift-width 2)
 (setq evil-want-C-u-scroll t)
 (require 'evil)
@@ -38,6 +41,8 @@
 (setq auto-save-default nil)
 
 ;; save my life
+;; Spaces instead of tabs
+(setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (fset 'yes-or-no-p 'y-or-n-p);; use y/n to anwser
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
