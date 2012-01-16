@@ -13,6 +13,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-powerline'
 
+let g:Powerline_symbols = 'unicode'
+
 syntax on
 filetype plugin on
 filetype indent on " Enable filetype-specific indenting and plugins
@@ -21,7 +23,6 @@ runtime! macros/matchit.vim
 
 set bs=2
 set laststatus=2
-set t_Co=256
 
 set expandtab
 set softtabstop=2

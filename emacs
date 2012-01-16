@@ -18,13 +18,11 @@
     flymake-ruby
     rvm
     ruby-electric
-    fuzzy-format
    )
 )
 (require 'el-get)
 (el-get 'sync)
 
-(require 'fuzzy-format)
 (setq evil-shift-width 2)
 (setq evil-want-C-u-scroll t)
 (require 'evil)
