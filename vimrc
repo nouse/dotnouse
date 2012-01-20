@@ -23,6 +23,7 @@ runtime! macros/matchit.vim
 
 set bs=2
 set laststatus=2
+set hidden
 
 set expandtab
 set softtabstop=2

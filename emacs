@@ -54,6 +54,9 @@
 (ido-mode 1)
 (setq ido-enable-flex-matching t)
 
+(add-to-list 'load-path "~/.emacs.d/rinari")
+(require 'rinari)
+(rvm-autodetect-ruby)
 ;; rubymode
 (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
@@ -79,3 +82,16 @@
           (find-file file))
 (defun eshell/vim (file)
           (find-file file))
+
+;; dependency: rvm rinari
+(defadvice rinari-web-server (before rvm-switch-rinari-web-server)
+  (rvm-activate-corresponding-ruby))
+(ad-activate 'rinari-web-server)
+
+(defadvice rinari-console (before rvm-switch-rinari-console)
+  (rvm-activate-corresponding-ruby))
+(ad-activate 'rinari-console)
+
+(defadvice run-ruby (before rvm-switch-run-ruby)
+  (rvm-activate-corresponding-ruby))
+(ad-activate 'run-ruby)
