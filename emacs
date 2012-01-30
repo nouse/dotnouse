@@ -27,7 +27,7 @@
 (setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode 1)
-(define-key evil-normal-state-map " " 'evil-ex-read-command)
+(define-key evil-normal-state-map " " 'evil-ex)
 
 (require 'color-theme)
 (color-theme-initialize)
@@ -43,7 +43,6 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (fset 'yes-or-no-p 'y-or-n-p);; use y/n to anwser
-(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
 ;;disable both beeping and visible-bell
 (setq visible-bell nil)
