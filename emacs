@@ -18,6 +18,7 @@
     flymake-ruby
     rvm
     ruby-electric
+    markdown-mode
    )
 )
 (require 'el-get)
@@ -28,6 +29,7 @@
 (require 'evil)
 (evil-mode 1)
 (define-key evil-normal-state-map " " 'evil-ex)
+(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
 
 (require 'color-theme)
 (color-theme-initialize)
@@ -49,6 +51,8 @@
 (setq ring-bell-function 'ignore)
 
 (require 'mingus)
+
+(add-to-list 'auto-mode-alist '("\\.mkd\\'" . markdown-mode))
 
 (ido-mode 1)
 (setq ido-enable-flex-matching t)
