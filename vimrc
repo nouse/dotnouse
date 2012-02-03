@@ -12,6 +12,7 @@ Bundle 'ervandew/supertab'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-rails'
 
 let g:Powerline_symbols = 'unicode'
 
