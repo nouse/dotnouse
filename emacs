@@ -19,10 +19,13 @@
     rvm
     ruby-electric
     markdown-mode
+    inf-ruby
    )
 )
 (require 'el-get)
 (el-get 'sync)
+
+(require 'geiser)
 
 (setq evil-shift-width 2)
 (setq evil-want-C-u-scroll t)
