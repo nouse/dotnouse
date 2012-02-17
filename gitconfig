@@ -1,0 +1,4 @@
+[core]
+	excludesfile = ~/.gitexcludes
+[color]
+	diff = auto
