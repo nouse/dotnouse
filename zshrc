@@ -26,6 +26,10 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+# an empty function which will be used in several themes
+function rbenv_prompt_info() {
+  echo "()"
+}
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -34,8 +38,13 @@ plugins=(git rvm)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-unsetopt correct_all
 
+# Patches to oh-my-zsh
+unsetopt correct_all
+bindkey '\e.' insert-last-word
+bindkey '\C-x\C-e' edit-command-line
+
+# more git aliases
 alias gd="git diff"
 alias gdc="git diff --cached"
 
