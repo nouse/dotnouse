@@ -13,6 +13,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-rails'
+Bundle 'mileszs/ack.vim'
 
 let g:Powerline_symbols = 'unicode'
 
