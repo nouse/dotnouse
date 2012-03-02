@@ -33,7 +33,7 @@ function rbenv_prompt_info() {
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm)
+plugins=(git rvm git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,6 +47,7 @@ bindkey '\C-x\C-e' edit-command-line
 # more git aliases
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias gg="git gerrit"
 
 fpath=($HOME/.zsh-completions $fpath)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

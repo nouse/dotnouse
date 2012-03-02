@@ -12,7 +12,6 @@ TAGS
 # Logs and databases #
 ######################
 *.log
-*.sql
 *.sqlite
 
 # Other Stuff #

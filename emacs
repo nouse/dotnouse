@@ -48,6 +48,8 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (fset 'yes-or-no-p 'y-or-n-p);; use y/n to anwser
+(global-set-key (kbd "C-x C-p") 'previous-buffer)
+(global-set-key (kbd "C-x C-n") 'next-buffer)
 
 ;;disable both beeping and visible-bell
 (setq visible-bell nil)
@@ -59,10 +61,16 @@
 
 (ido-mode 1)
 (setq ido-enable-flex-matching t)
+(icomplete-mode 1)
 
 (add-to-list 'load-path "~/.emacs.d/rinari")
 (require 'rinari)
 (rvm-autodetect-ruby)
+;;; rhtml-mode
+(add-to-list 'load-path "~/.emacs.d/rhtml")
+(require 'rhtml-mode)
+(add-hook 'rhtml-mode-hook
+   (lambda () (rinari-launch)))
 ;; rubymode
 (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))

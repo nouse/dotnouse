@@ -2,3 +2,5 @@
 	excludesfile = ~/.gitexcludes
 [color]
 	diff = auto
+[color "diff"]
+	whitespace = red reverse
