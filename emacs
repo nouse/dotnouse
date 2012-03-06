@@ -6,6 +6,7 @@
  '(LaTeX-command "xelatex")
  '(TeX-command "tex")
  '(inhibit-startup-screen t)
+ '(initial-scratch-message nil)
  '(js2-basic-offset 2))
 (require 'ibus)
 (add-hook 'after-init-hook 'ibus-mode-on)
