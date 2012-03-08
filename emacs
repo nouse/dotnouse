@@ -51,6 +51,7 @@
 (fset 'yes-or-no-p 'y-or-n-p);; use y/n to anwser
 (global-set-key (kbd "C-x C-p") 'previous-buffer)
 (global-set-key (kbd "C-x C-n") 'next-buffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;disable both beeping and visible-bell
 (setq visible-bell nil)
