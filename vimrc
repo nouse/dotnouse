@@ -14,6 +14,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-rails'
 Bundle 'mileszs/ack.vim'
+Bundle 'eagletmt/ghcmod-vim'
 
 let g:Powerline_symbols = 'unicode'
 

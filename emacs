@@ -8,16 +8,12 @@
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(js2-basic-offset 2))
-(require 'ibus)
-(add-hook 'after-init-hook 'ibus-mode-on)
 
 (setq
   el-get-sources
-  '(mingus
-    evil
+  '(evil
     color-theme
     flymake-ruby
-    rvm
     ruby-electric
     markdown-mode
     inf-ruby
@@ -25,8 +21,6 @@
 )
 (require 'el-get)
 (el-get 'sync)
-
-(require 'geiser)
 
 (setq evil-shift-width 2)
 (setq evil-want-C-u-scroll t)
@@ -57,8 +51,6 @@
 (setq visible-bell nil)
 (setq ring-bell-function 'ignore)
 
-(require 'mingus)
-
 (add-to-list 'auto-mode-alist '("\\.mkd\\'" . markdown-mode))
 
 (ido-mode 1)
@@ -67,7 +59,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/rinari")
 (require 'rinari)
-(rvm-autodetect-ruby)
 ;;; rhtml-mode
 (add-to-list 'load-path "~/.emacs.d/rhtml")
 (require 'rhtml-mode)
@@ -80,34 +71,14 @@
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
-(defun ruby-insert-end ()
-  (interactive)
-  (insert "end")
-  (ruby-indent-line t)
-  (end-of-line))
-
-;; Local key bindings
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            ;; (ruby-electric-mode)
-            (local-set-key [(control c) (control e)] 'ruby-insert-end)
-))
-
 ;; eshell alias
 (defun eshell/emacs (file)
           (find-file file))
 (defun eshell/vim (file)
           (find-file file))
 
-;; dependency: rvm rinari
-(defadvice rinari-web-server (before rvm-switch-rinari-web-server)
-  (rvm-activate-corresponding-ruby))
-(ad-activate 'rinari-web-server)
+;; Setting rbenv path
+(setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "PATH")))
+(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") exec-path))
 
-(defadvice rinari-console (before rvm-switch-rinari-console)
-  (rvm-activate-corresponding-ruby))
-(ad-activate 'rinari-console)
 
-(defadvice run-ruby (before rvm-switch-run-ruby)
-  (rvm-activate-corresponding-ruby))
-(ad-activate 'run-ruby)

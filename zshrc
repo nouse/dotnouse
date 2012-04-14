@@ -28,7 +28,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # an empty function which will be used in several themes
 function rbenv_prompt_info() {
-  echo "()"
+echo "($(rbenv version-name))"
 }
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -50,5 +50,6 @@ alias gdc="git diff --cached"
 alias gg="git gerrit"
 
 fpath=($HOME/.zsh-completions $fpath)
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.git_env" ]] && . "$HOME/.git_env"
+
+eval "$(rbenv init -)"
