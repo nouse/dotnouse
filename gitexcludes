@@ -17,3 +17,4 @@ TAGS
 # Other Stuff #
 ###############
 .rvmrc
+.rbenv-*
