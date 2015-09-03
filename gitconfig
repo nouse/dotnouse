@@ -4,3 +4,5 @@
 	diff = auto
 [color "diff"]
 	whitespace = red reverse
+[push]
+        default = current
